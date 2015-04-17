@@ -1,0 +1,22 @@
+# with only one parameter a adds a node of this name to root
+a one
+a two
+a three
+# now add some subdirectories
+a four one
+a five one
+a six one
+a seven two
+# now add subsub directory
+a eight one/four
+a nine one/four/eight
+a ten one/five
+a eleven one/five
+a twelve two
+a thirteen two/twelve
+# remove the subdirectory six from path one
+r six one
+# make a link to one/four/eight as a child of three
+h eight one/four three
+# remove eight from one/four but it should still be a child of three
+r eight one/four

@@ -1,0 +1,7 @@
+# with only one parameter a adds a node of this name to root
+a usr
+a local usr
+a bin usr/local
+# make a link to usr/local as a child of /usr/local/bin
+# this makes a loop 
+h local usr /usr/local/bin

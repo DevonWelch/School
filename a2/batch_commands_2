@@ -1,0 +1,22 @@
+add_user Michelle
+add_user Stacey
+list_users 
+add_calendar 209
+add_calendar home
+list_calendars
+list_events 209
+subscribe Michelle 209
+subscribe Stacey 209
+add_event 209 review 9
+add_event 209 a2 17 15 10
+add_event home dinner 17
+add_event home Hallowe'en 18 31
+add_event home Christmas l6 25 12
+subscribe Michelle home
+list_events home
+add_event 209 midterm 1 21 10
+add_event home NewYearsEve 0 1 1 2015
+list_events 209
+list_events home
+next_event Stacey
+print_all_events Michelle

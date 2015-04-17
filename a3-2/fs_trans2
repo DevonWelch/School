@@ -1,0 +1,16 @@
+a a root
+a b root
+a c root
+a d a
+a e a
+# to demonstrate that you can have the same name 
+#  at different locations in tree
+a e a/d
+# let's remove the first one
+r e a
+# add link to /c from /a/d
+# notice that c appears in the printed tree two times but it is 
+# the same node (unlike 2 different e's earlier)
+h c root a/d 
+# now when we add f as a child of c, it appears twice in the tree
+a f c

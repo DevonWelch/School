@@ -1,0 +1,21 @@
+add_calendar 209
+add_event 209 review 9
+add_event 209 review2 10
+add_event 209 review3 11
+add_user Michelle
+subscribe Michelle 209
+add_event 209 review4 1 17 11
+add_user Devon
+subscribe Devon 209
+list_users
+add_calendar home
+list_users
+add_event home thing1 1
+list_users
+add_event home thing2 2
+list_users
+add_user person
+list_users
+subscribe person home
+list_users
+subscribe Devon home
