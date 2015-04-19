@@ -1,0 +1,1 @@
+The purpose of this assignment was to learn about C.

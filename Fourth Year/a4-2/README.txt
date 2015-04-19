@@ -1,0 +1,1 @@
+The purpose of this assignment was to work with servers and clients.

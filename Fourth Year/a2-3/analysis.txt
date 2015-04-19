@@ -151,9 +151,6 @@ matmul:	    50  25.1490 746645 2222235	2222185	1831751	390434
 	    
 	    200 46.7165	1386957	1581923	1581723	1229437	352286
 
-interesting
-
-I wasn't sure what program to use as the one that would have an interesting trace, so I didn't do that. 
 
 Comaprison Paragraph:
 

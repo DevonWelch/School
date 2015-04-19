@@ -1,0 +1,1 @@
+The purpose of this assignment was to parse an HTML string.

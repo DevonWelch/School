@@ -1,0 +1,1 @@
+The purpose fo this asisgnment was to implement a garbage collector.

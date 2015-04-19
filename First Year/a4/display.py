@@ -1,7 +1,7 @@
 import pygame
 import os
 import os.path
-import media
+#import media
 from directory_file import Directory
 
 
@@ -257,7 +257,10 @@ def choose_directory():
     '''(NoneType) -> str
     Returns a string of the chosen directory.'''
 
-    d = str(media.choose_folder())
+    #d = str(media.choose_folder())
+    #d = "C:\Users\Devon"
+    d = raw_input("What directory would you like to start from? ")
+    #print d
     d = d.replace('/', '\\')
     d.strip('u')
     d.strip("'")

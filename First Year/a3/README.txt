@@ -1,0 +1,1 @@
+The purpose of this assignment was to find what degree of Kevin Bacon an actor is.

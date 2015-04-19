@@ -50,12 +50,16 @@ class Directory(File):
         # _get_children method, this will recursively loop until the entire
         # tree has been made.
 
+        print self.route
         children = os.listdir(self.route)
         child_list = []
         for child in children:
             temp_route = os.path.join(self.route, child)
             if os.path.isdir(temp_route):
-                child_list.append(Directory(child, self))
+                try:
+                    child_list.append(Directory(child, self))
+                except:
+                    happy = 'sad'
             else:
                 try:
                     child_list.append(File(child, self))
@@ -91,7 +95,7 @@ class Directory(File):
         for child in self.children:
             if os.path.isdir(child.route):
                 child.determine_children_ratio()
-            if self.total_size != 0:
+            if self.total_size != 0 and self.total_size != self.size:
                 if os.path.isdir(child.route):
                     child.ratio = (child.total_size / \
                         (self.total_size - self.size))
