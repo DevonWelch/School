@@ -1,0 +1,94 @@
+<style>
+
+#placeholder {
+	/*For some reason, the first style in my sheet will not work,
+	so I have to have this empty one here.*/
+}
+
+#game-screen {
+	width:400px;
+}
+
+#info-bar {
+	width:400px;
+	height:25px;
+	border-style: solid;
+	border-radius: 2px;
+	border-color:black;
+	float:left;
+	text-align:center;
+}
+
+#viewport {
+	width:400px;
+	height:625px;
+	border-style: solid;
+	border-radius: 2px;
+	border-color:black;
+	float:left;
+}
+
+#timer {
+	width:33%;
+	height:100%;
+	float:left;
+}
+
+#pause-play {
+	width:34%;
+	height:100%;
+	float:left;
+}
+
+#pause-play-button {
+	width:34%;
+	height:100%;
+	float:left;
+	/*border-color:gray;
+	border-radius:1px;
+	border-style:solid;*/
+}
+
+#score {
+	width:33%;
+	height:100%;
+	float:left;
+}
+
+#game-view {
+	width:400;
+	height:600;
+	canvas.width:400;
+	canvas.height:600;
+	border-color:black;
+	border-radius:2px;
+	border-style:solid;
+}
+
+
+#food {
+
+}
+
+#black-bug {
+	first-speed:150px;
+	second-speed:200px;
+	score:5;
+	probability:0.3;
+}
+
+#red-bug {
+	first-speed:75px;
+	second-speed:100px;
+	score:3;
+	probability:0.3;
+}
+
+#orange-bug {
+	first-speed:60px;
+	second-speed:80px;
+	score:1;
+	probability:0.4;
+}
+
+</style>

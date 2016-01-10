@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Server Side Validation</title>
+</head>
+
+<body>
+	 <div style="color:red">
+        <%- JSON.stringify(errors.error1) %><br/>
+        <%- JSON.stringify(errors.error2) %>
+    </div>
+
+<form action="/signup" method="POST">
+Username: <input type="text" name="userName" id="userName"/> <br /><br />
+Password: <input type="password" name="userPass" id="userPass" value=""/>
+<br /><br />
+
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

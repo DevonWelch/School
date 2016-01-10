@@ -1,0 +1,82 @@
+<h1 id="welcome">Welcome!</h1>
+<table id="user-table">
+	<tr><th>User Email</th><th>Display Name</th></tr>
+</table>
+<script>
+$(document).ready(function(){
+	$.ajax({url:"all-users", type: 'POST', success: function(result) {
+		userList = JSON.parse(result);
+		for (i=0; i < userList.length; i++) {
+			if ('display' in userList[i]) {
+				$("#user-table").append("<tr class='user-row' row='" + i + "'><td>" + userList[i]["email"] + "</td><td>" + userList[i]['display'] + "</td></tr>");
+			} else {
+				$("#user-table").append("<tr class='user-row' row='" + i + "'><td>" + userList[i]["email"] + "</td><td></td></tr>");
+			}
+		}
+		$(".user-row").click(function(){
+			localStorage.test = $(this).children(":first").text();
+			c = $(this).children(":first").text();
+			$.ajax({url: "/profile-page.html", type: 'POST', success: function(result){
+				$.ajax({url:"get-user=" + c, type: 'POST', success: function(res) {
+					$('#content').html(result);
+    				userName = JSON.parse(res);
+    				$("#email").text(userName["email"]);
+    				$("#big-pic").attr("src", userName["image"]);
+    				if ("display" in userName) {
+    					$("#display-name").text(userName["display"]);
+    				} 
+    				if ("description" in userName) {
+    					$("#description").text(userName["description"]);
+    				}
+    				$.ajax({url:"get-user=" + localStorage.email, type: 'POST', success: function(res2) {
+						usrName = JSON.parse(res2);
+						if (localStorage.email != userName["email"] && usrName["role"] != "super-admin" && !(userName["role"] == "standard" && usrName["role"] == "admin")) {
+    						$("#edit-button").text('');
+    					} 
+						if (((usrName["role"] != "standard" && userName["role"] == "standard") || ((usrName["role"] == "super-admin" && userName["role"] == "admin"))) && usrName["email"] != userName["email"]) {
+							$("#button-div").append('<button id="delete-button">Delete User</button>');
+						}
+						if (usrName["role"] == "super-admin") {
+							if (userName["role"] == "standard") {
+								$("#button-div").append('<button id="admin-button">Make Admin</button>');
+							} else if (userName["role"] == "admin") {
+								$("#button-div").append('<button id="admin-button">Remove Admin</button>');
+							}
+						}
+						$("#delete-button").click(function(){
+							$.ajax({url:"remove-user=" + $("#email").text(), type: 'POST', success:function(result) {
+								$.ajax({url: "/home-page.html", type: 'POST', success: function(result) {
+									var userName;
+	    							$.ajax({url:"get-user=" + localStorage.email, type: 'POST', success: function(res) {
+    									userName = JSON.parse(res);
+	    								if ("display" in userName) {
+	    									displayName = userName["display"];
+	    								} else {
+	    									displayName = userName["email"];
+						    			}
+						    			$('#username').text(displayName);
+										$("#profile-pic").attr("src", userName["image"]);
+						    			$('#content').html(result);
+										$("#welcome").text("Welcome " + displayName + "!");
+		    						}});
+								}});
+							}});
+						});
+						$("#admin-button").click(function(){
+    						$.ajax({url: "change-admin=" + $("#email").text(), type: 'POST', success: function(result){
+    							if (result == "0") {
+									$("#error").text("Administrator priviliges granted.");
+									$("#admin-button").text("Remove Admin");
+								} else {
+									$("#error").text("Administrator priviliges revoked.");
+									$("#admin-button").text("Make Admin");
+								}
+    						}});
+    					});
+					}});
+	    		}});
+			}});
+		});
+	}});
+});
+</script>

@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+</head>
+
+<body>
+
+<form action="/signup" method="POST">
+Username: <input type="text" name="name" required="" pattern="[a-zA-Z]+"
+    oninvalid="setCustomValidity('Enter only Alphabets ')"/> <br /><br />
+Password: <input type="password" name="password" value="" required="" 
+pattern="[0-9A-Z]{4}" title="Provide password."/>
+<br /><br />
+
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

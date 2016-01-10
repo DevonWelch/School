@@ -1,0 +1,64 @@
+<style>
+
+#placeholder{
+
+}
+
+#header {
+	float:left;
+	background-color: #aaaaff;
+	width: 100%;
+	height: 56px;
+	padding:1px;
+	border-style: solid;
+	border-radius: 3px;
+	border-color:black;
+}
+
+#profile-pic {
+	float:right;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#username {
+	float:right;
+	display: inline-block;
+	vertical-align:middle;
+}
+
+#logout-button {
+	float:right;
+}
+
+#edit-button, #edit-button-1 {
+	font-size: 50%;
+	color:blue;
+	text-decoration:underline;
+}
+
+#user-table, td, th {
+	border: 1px solid black;
+}
+
+#user-table{
+	border-collapse: collapse;
+	font-size:200%;
+}
+
+#content {
+	background-color: #ddddff;
+	width:100%;
+	height:100%;
+	float:left;
+}
+
+th {
+	background-color: #ff6666;
+} 
+
+td {
+	background-color: #ddadaa;
+}
+
+</style>

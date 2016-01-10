@@ -1,0 +1,34 @@
+<!--Adopted from w3schools-->
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("div").click(function(){
+        $(this).hide();
+    });
+    $("button").click(function(){
+        $("p").toggle();
+    });
+    
+    if ( $( '#nonexistent' ) ) {
+	  alert($( '#nonexistent' ));// Wrong! This code will always run!
+	}
+});
+</script>
+</head>
+<body>
+
+<div>If you click on me, I will disappear.</div>
+<div>Click me away!</div>
+<div>Click me too!</div>
+
+<!--
+<br>
+<button>Toggle</button>
+
+<p>This is a paragraph with Toggle content.</p>
+-->
+</body>
+</html>

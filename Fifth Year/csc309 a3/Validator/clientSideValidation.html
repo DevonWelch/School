@@ -1,0 +1,27 @@
+<script type="text/javascript">
+   function  validate()
+   {
+   	var isValid=true;
+   		if(document.getElementById('userName').value=="")
+   			{
+   				document.getElementById('nameError').innerHTML="Provide user name.";
+   				isValid=false;
+   			}
+
+   		if(document.getElementById('userPass').value=="")
+   			{
+   				document.getElementById('passError').innerHTML="Provide password.";
+   				isValid=false;
+   			}	
+   			
+   		return isValid;
+   }
+</script>
+
+<form action="/signup" method="POST">
+Username: <input type="text" id="userName" name="userName" /> <label style="color:red" id="nameError"></label> <br /><br />
+Password: <input type="password" id="userPass" name="userPass" value=""/> <label style="color:red" id="passError"></label>
+<br /><br />
+
+<input type="submit" onclick="return validate()"  value="Submit">
+</form>
